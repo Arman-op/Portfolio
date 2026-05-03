@@ -251,12 +251,12 @@ const ACHIEVEMENTS = [
   { 
     title: "AWS Knowledge", 
     desc: "Cloud Essentials Badge - April 2025.", 
-    link: "#" 
+    link: "https://drive.google.com/file/d/1ofkJ-IDwqugi_y5wIAMELFiVgIFJFaEA/view" 
   },
   { 
     title: "Deloitte Certification", 
     desc: "Deloitte Australia Technology Job Simulation on Forage - April 2025.", 
-    link: "#" 
+    link: "https://drive.google.com/file/d/1EwxGHUXeNsWBn1P5YbbhLFMBOrYQjljX/view" 
   },
   { 
     title: "Hackathons", 
@@ -265,7 +265,7 @@ const ACHIEVEMENTS = [
   { 
     title: "Electronic Arts", 
     desc: "Software Engineering Job Simulation.", 
-    link: "#" 
+    link: "https://drive.google.com/file/d/1tRvYuySPv_hBe4wU-iwhHPnYNGneVGmx/view" 
   },
 ];
 
