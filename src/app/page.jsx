@@ -243,6 +243,32 @@ const SKILLS = [
   },
 ];
 
+const ACHIEVEMENTS = [
+  { 
+    title: "Open Source Contributor", 
+    desc: "Successfully merged 11+ Pull Requests across Apertre 3.0, ECWoC 2026, and OSCG 2026, contributing to diverse open-source ecosystems." 
+  },
+  { 
+    title: "AWS Knowledge", 
+    desc: "Cloud Essentials Badge - April 2025.", 
+    link: "#" 
+  },
+  { 
+    title: "Deloitte Certification", 
+    desc: "Deloitte Australia Technology Job Simulation on Forage - April 2025.", 
+    link: "#" 
+  },
+  { 
+    title: "Hackathons", 
+    desc: "Top 5 Finalist at Somnia Reactivity Mini Hackathon; actively participated in multiple national and college-level hackathons." 
+  },
+  { 
+    title: "Electronic Arts", 
+    desc: "Software Engineering Job Simulation.", 
+    link: "#" 
+  },
+];
+
 /* ═══════════════════════════════════════════════
    PIXEL AVATAR  — 12×16 sprite
 ═══════════════════════════════════════════════ */
@@ -1225,6 +1251,66 @@ export default function Portfolio() {
                 {items.map(([name, val]) => (
                   <SkBar key={name} name={name} val={val} col={col} vis={skillVis} />
                 ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ══ TROPHY ROOM ════════════════════════════════ */}
+      <section
+        id="achievements"
+        style={{ padding: "80px 28px", maxWidth: 760, margin: "0 auto" }}
+      >
+        <div style={{ marginBottom: 48 }}>
+          <div className="sec-t" style={{ color: T.yellow }}>TROPHY ROOM</div>
+          <div
+            className="dash"
+            style={{
+              width: 180,
+              background: `repeating-linear-gradient(
+                90deg, ${T.yellow} 0, ${T.yellow} 8px,
+                transparent 8px, transparent 16px
+              )`,
+            }}
+          />
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          {ACHIEVEMENTS.map((ach, i) => (
+            <div
+              key={i}
+              style={{
+                background: T.card,
+                border: `3px solid ${T.yellow}`,
+                boxShadow: `4px 4px 0 ${T.yellow}44`,
+                padding: 24,
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+                transition: "transform 0.2s, box-shadow 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translate(-2px, -2px)";
+                e.currentTarget.style.boxShadow = `6px 6px 0 ${T.yellow}88`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "none";
+                e.currentTarget.style.boxShadow = `4px 4px 0 ${T.yellow}44`;
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <div style={{ fontSize: 10, color: T.yellow, letterSpacing: 0.5 }}>
+                  <span style={{ marginRight: 8 }}>🏆</span> {ach.title}
+                </div>
+                {ach.link && (
+                  <a href={ach.link} target="_blank" rel="noreferrer" style={{ color: T.text, opacity: 0.7 }}>
+                    <ExternalLink size={12} strokeWidth={3} />
+                  </a>
+                )}
+              </div>
+              <div style={{ fontSize: 9, color: T.text, lineHeight: 1.8 }}>
+                {ach.desc}
               </div>
             </div>
           ))}
